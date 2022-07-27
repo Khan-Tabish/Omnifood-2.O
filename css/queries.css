@@ -1,16 +1,12 @@
-/*  rem and em do NOT depend on html font-size in media queries! Insted, 1rem = 1em = 16px */
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
 
-/* ************************ */
-/* BELOW 1344px  [Smaller desktops] */
-/* ************************ */
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+
 @media (max-width: 84em) {
   .hero {
     max-width: 120rem;
-  }
-
-  .grid {
-    column-gap: 4.8rem;
-    row-gap: 6.4rem;
   }
 
   .heading-primary {
@@ -19,6 +15,30 @@
 
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px  */
+    font-size: 56.25%;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
   }
 
   .header {
@@ -38,28 +58,9 @@
   }
 }
 
-/* ************************ */
-/* BELOW 1200px  [Landscape Tablets] */
-/* ************************ */
-
-@media (max-width: 75em) {
-  html {
-    /* 9px / 16px */
-    font-size: 56.25%;
-  }
-
-  .headding-secondary {
-    font-size: 3.6rem;
-  }
-
-  .headding-tertiary {
-    font-size: 2.4rem;
-  }
-}
-
-/* ************************ */
-/* BELOW 944px  [Tablets] */
-/* ************************ */
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
 
 @media (max-width: 59em) {
   html {
@@ -87,16 +88,16 @@
     margin-top: 3.2rem;
   }
 
-  .logo-img {
+  .logos img {
     height: 2.4rem;
   }
 
   .step-number {
-    font-size: 2.4rem;
+    font-size: 7.4rem;
   }
 
   .meal-content {
-    padding: 2.4rem 3.2rem 3.24rem 3.2rem;
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
   }
 
   .section-testimonials {
@@ -142,17 +143,17 @@
     justify-content: center;
     transition: all 0.5s ease-in;
 
-    /* HIDE NAVIGATION */
-    /* Allows NO transistion at all */
+    /* Hide navigation */
+    /* Allows NO transitions at all */
     /* display: none; */
 
     /* 1) Hide it visually */
     opacity: 0;
 
-    /* 2) Make it unaccessable to mouse and keyboard */
+    /* 2) Make it unaccessible to mouse and keyboard */
     pointer-events: none;
 
-    /* 3) Hide it from screen reader */
+    /* 3) Hide it from screen readers */
     visibility: hidden;
   }
 
@@ -163,11 +164,11 @@
     transform: translateX(0);
   }
 
-  .nav-open .icon-mobile-nav[name="close"] {
+  .nav-open .icon-mobile-nav[name="close-outline"] {
     display: block;
   }
 
-  .nav-open .icon-mobile-nav[name="menu"] {
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
     display: none;
   }
 
@@ -182,9 +183,9 @@
   }
 }
 
-/* ************************ */
-/* BELOW 704px  [Smaller Tablets] */
-/* ************************ */
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
 
 @media (max-width: 44em) {
   .grid--3-cols,
@@ -193,11 +194,11 @@
   }
 
   .diets {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
     justify-self: center;
   }
 
-  .headding-secondary {
+  .heading-secondary {
     margin-bottom: 4.8rem;
   }
 
@@ -221,9 +222,9 @@
   }
 }
 
-/* ************************ */
-/* BELOW 5444px  [Phones] */
-/* ************************ */
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
 
 @media (max-width: 34em) {
   .grid {
@@ -239,7 +240,7 @@
   .btn,
   .btn:link,
   .btn:visited {
-    padding: 2.4rem 3.6rem;
+    padding: 2.4rem 1.6rem;
   }
 
   .section-hero {
@@ -254,7 +255,7 @@
     width: 80%;
   }
 
-  .logo-img {
+  .logos img {
     height: 1.2rem;
   }
 
@@ -293,16 +294,21 @@
   }
 }
 
-/*- FONT SIZE SYSTEM (px)
+/* 
+- Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
- 
 
- - SPACING SYSTEM (px) 
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
 
-/* ************************ */
-/* Fixing safari Flexbox gap*/
-/* ************************ */
+/**************************/
+/* Fixing Safari flexbox gap */
+/**************************/
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
 
 .no-flexbox-gap .list-item:not(:last-child) {
   margin-bottom: 1.6rem;
